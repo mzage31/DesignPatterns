@@ -12,8 +12,12 @@ public class BuilderTester : IPatternTester
         var pizzaDescriptorBuilder = new PizzaDescriptor.Builder();
         var pizzaDescriptorDirector = new PizzaDescriptor.Director(pizzaDescriptorBuilder);
 
-        var builtPizza = pizzaBuilder
+        var builtPepperoniPizza = pizzaBuilder
             .AddPepperoni()
+            .Build();
+
+        var builtChickenPizza = pizzaBuilder
+            .AddChicken()
             .Build();
 
         var builtPizzaDescriptor = pizzaDescriptorBuilder
@@ -26,7 +30,8 @@ public class BuilderTester : IPatternTester
 
         Console.WriteLine(
             new ConsoleTable("Variable Name", "Result")
-                .AddRow("builtPizza", builtPizza)
+                .AddRow("builtPepperoniPizza", builtPepperoniPizza)
+                .AddRow("builtChickenPizza", builtChickenPizza)
                 .AddRow("builtPizzaDescriptor", builtPizzaDescriptor)
                 .AddRow("directedPizza", directedPizza)
                 .AddRow("directedPizzaDescriptor", directedPizzaDescriptor)

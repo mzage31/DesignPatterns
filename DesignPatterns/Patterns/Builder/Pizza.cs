@@ -2,6 +2,26 @@
 
 public class Pizza
 {
+    private bool hasChicken;
+    private bool hasPepper;
+
+
+    private bool hasPepperoni;
+
+    public override string ToString()
+    {
+        var list = new List<string>();
+
+        if (hasPepperoni)
+            list.Add("pepperoni");
+        if (hasPepper)
+            list.Add("pepper");
+        if (hasChicken)
+            list.Add("chicken");
+
+        return $"Pizza with {string.Join(", ", list)}";
+    }
+
     public class Builder : IPizzaBuilder<Pizza>
     {
         private Pizza pizza = null!;
@@ -10,7 +30,7 @@ public class Pizza
         {
             Reset();
         }
-        
+
         public IPizzaBuilder<Pizza> Reset()
         {
             pizza = new Pizza();
@@ -42,7 +62,7 @@ public class Pizza
             return final;
         }
     }
-    
+
     public class Director : IPizzaDirector<Pizza>
     {
         private readonly IPizzaBuilder<Pizza> builder;
@@ -51,6 +71,7 @@ public class Pizza
         {
             this.builder = builder;
         }
+
         public Pizza MakePepperoniPizza()
         {
             return builder
@@ -65,24 +86,5 @@ public class Pizza
                 .AddChicken()
                 .Build();
         }
-    }
-
-    
-    private bool hasPepperoni;
-    private bool hasPepper;
-    private bool hasChicken;
-
-    public override string ToString()
-    {
-        var list = new List<string>();
-        
-        if(hasPepperoni)
-            list.Add("pepperoni");
-        if(hasPepper)
-            list.Add("pepper");
-        if(hasChicken)
-            list.Add("chicken");
-
-        return $"Pizza with {string.Join(", ", list)}";
     }
 }

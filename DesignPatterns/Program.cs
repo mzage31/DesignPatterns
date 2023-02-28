@@ -3,6 +3,7 @@ using DesignPatterns.Logger;
 using DesignPatterns.Patterns.Creational.AbstractFactory;
 using DesignPatterns.Patterns.Creational.Builder;
 using DesignPatterns.Patterns.Creational.FactoryMethod;
+using DesignPatterns.Patterns.Creational.Prototype;
 using DesignPatterns.Patterns.Creational.Singleton;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -14,6 +15,7 @@ collection.AddTransient<BuilderTester>();
 collection.AddTransient<FactoryMethodTester>();
 collection.AddTransient<AbstractFactoryTester>();
 collection.AddTransient<SingletonTester>();
+collection.AddTransient<PrototypeTester>();
 collection.AddTransient<Tester>();
 var provider = collection.BuildServiceProvider();
 

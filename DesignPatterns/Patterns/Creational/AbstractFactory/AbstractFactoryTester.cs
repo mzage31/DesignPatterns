@@ -1,9 +1,14 @@
 ﻿using ConsoleTables;
+using DesignPatterns.Logger;
 
 namespace DesignPatterns.Patterns.Creational.AbstractFactory;
 
 public class AbstractFactoryTester : PatternTester
 {
+    public AbstractFactoryTester(ILogger logger) : base(logger)
+    {
+    }
+
     protected override void TestImplementation()
     {
         var windowsUiFactory = new WindowsUIFactory();
@@ -14,8 +19,8 @@ public class AbstractFactoryTester : PatternTester
 
         var macButton = macUiFactory.CreateButton();
         var macCheckBox = macUiFactory.CreateCheckBox(false);
-        
-        Console.WriteLine(
+
+        Logger.LogLine(
             new ConsoleTable("Variable Name", "Result")
                 .AddRow("windowsButton", windowsButton)
                 .AddRow("windowsCheckBox", windowsCheckBox)

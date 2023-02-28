@@ -1,7 +1,16 @@
-﻿namespace DesignPatterns.Patterns;
+﻿using DesignPatterns.Logger;
+
+namespace DesignPatterns.Patterns;
 
 public abstract class PatternTester
 {
+    protected readonly ILogger Logger;
+
+    public PatternTester(ILogger logger)
+    {
+        Logger = logger;
+    }
+
     public void Test()
     {
         var testName = $" {GetType().Name} ";
@@ -11,9 +20,9 @@ public abstract class PatternTester
             testName = testName.Insert(0, "-");
         for (var i = 0; i < realCount; i++)
             testName += "-";
-        Console.WriteLine(testName);
+        Logger.LogLine(testName);
         TestImplementation();
     }
-    
+
     protected abstract void TestImplementation();
 }

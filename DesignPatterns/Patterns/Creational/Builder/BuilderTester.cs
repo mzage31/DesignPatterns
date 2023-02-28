@@ -1,10 +1,10 @@
 ﻿using ConsoleTables;
 
-namespace DesignPatterns.Patterns.Builder;
+namespace DesignPatterns.Patterns.Creational.Builder;
 
-public class BuilderTester : IPatternTester
+public class BuilderTester : PatternTester
 {
-    public void Test()
+    protected override void TestImplementation()
     {
         var pizzaBuilder = new Pizza.Builder();
         var pizzaDirector = new Pizza.Director(pizzaBuilder);

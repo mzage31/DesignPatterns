@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Patterns.Builder;
+﻿namespace DesignPatterns.Patterns.Creational.Builder;
 
 public interface IPizzaBuilder<out T>
 {

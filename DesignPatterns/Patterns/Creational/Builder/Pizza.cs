@@ -1,6 +1,6 @@
-﻿namespace DesignPatterns.Patterns.Builder;
+﻿namespace DesignPatterns.Patterns.Creational.Builder;
 
-public class PizzaDescriptor
+public class Pizza
 {
     private bool hasChicken;
     private bool hasPepper;
@@ -13,49 +13,49 @@ public class PizzaDescriptor
         var list = new List<string>();
 
         if (hasPepperoni)
-            list.Add("tasty pepperoni");
+            list.Add("pepperoni");
         if (hasPepper)
-            list.Add("full of pepper");
+            list.Add("pepper");
         if (hasChicken)
-            list.Add("juicy chicken");
+            list.Add("chicken");
 
-        return $"A {string.Join(", ", list)} pizza";
+        return $"Pizza with {string.Join(", ", list)}";
     }
 
-    public class Builder : IPizzaBuilder<PizzaDescriptor>
+    public class Builder : IPizzaBuilder<Pizza>
     {
-        private PizzaDescriptor pizza = null!;
+        private Pizza pizza = null!;
 
         public Builder()
         {
             Reset();
         }
 
-        public IPizzaBuilder<PizzaDescriptor> Reset()
+        public IPizzaBuilder<Pizza> Reset()
         {
-            pizza = new PizzaDescriptor();
+            pizza = new Pizza();
             return this;
         }
 
-        public IPizzaBuilder<PizzaDescriptor> AddPepperoni()
+        public IPizzaBuilder<Pizza> AddPepperoni()
         {
             pizza.hasPepperoni = true;
             return this;
         }
 
-        public IPizzaBuilder<PizzaDescriptor> AddPepper()
+        public IPizzaBuilder<Pizza> AddPepper()
         {
             pizza.hasPepper = true;
             return this;
         }
 
-        public IPizzaBuilder<PizzaDescriptor> AddChicken()
+        public IPizzaBuilder<Pizza> AddChicken()
         {
             pizza.hasChicken = true;
             return this;
         }
 
-        public PizzaDescriptor Build()
+        public Pizza Build()
         {
             var final = pizza;
             Reset();
@@ -63,16 +63,16 @@ public class PizzaDescriptor
         }
     }
 
-    public class Director : IPizzaDirector<PizzaDescriptor>
+    public class Director : IPizzaDirector<Pizza>
     {
-        private readonly IPizzaBuilder<PizzaDescriptor> builder;
+        private readonly IPizzaBuilder<Pizza> builder;
 
-        public Director(IPizzaBuilder<PizzaDescriptor> builder)
+        public Director(IPizzaBuilder<Pizza> builder)
         {
             this.builder = builder;
         }
 
-        public PizzaDescriptor MakePepperoniPizza()
+        public Pizza MakePepperoniPizza()
         {
             return builder
                 .AddPepperoni()
@@ -80,7 +80,7 @@ public class PizzaDescriptor
                 .Build();
         }
 
-        public PizzaDescriptor MakeChickenPizza()
+        public Pizza MakeChickenPizza()
         {
             return builder
                 .AddChicken()

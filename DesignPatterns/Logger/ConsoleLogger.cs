@@ -11,4 +11,8 @@ public class ConsoleLogger : ILogger
     {
         Console.WriteLine(message);
     }
+
+    public void Display()
+    {
+    }
 }

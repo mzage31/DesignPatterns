@@ -8,6 +8,7 @@ public class BuilderTester : PatternTester
     public BuilderTester(ILogger logger) : base(logger)
     {
     }
+    protected override string GetName() => "Builder Pattern";
 
     protected override void TestImplementation()
     {

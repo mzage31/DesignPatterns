@@ -8,6 +8,7 @@ public class FactoryMethodTester : PatternTester
     public FactoryMethodTester(ILogger logger) : base(logger)
     {
     }
+    protected override string GetName() => "Factory Method Pattern";
 
     protected override void TestImplementation()
     {

@@ -55,7 +55,7 @@ public class Tester
 
         // structural patterns
         _adapterTester.Test();
-        _builderTester.Test();
+        _bridgeTester.Test();
 
         _logger.Display();
     }

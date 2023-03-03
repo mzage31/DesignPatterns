@@ -13,14 +13,13 @@ public abstract class PatternTester
 
     public void Test()
     {
-        const string l = "/";
-        var testName = $" {GetName()} ";
+        var testName = $" {GetName().ToUpper()} ";
         const int count = 50;
         var realCount = count - testName.Length / 2;
         for (var i = 0; i < realCount; i++)
-            testName = testName.Insert(0, l);
+            testName = testName.Insert(0, "/");
         for (var i = 0; i < realCount; i++)
-            testName += l;
+            testName += "\\";
         Logger.LogLine(testName);
         TestImplementation();
     }

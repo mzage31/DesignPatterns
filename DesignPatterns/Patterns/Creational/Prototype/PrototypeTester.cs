@@ -26,7 +26,7 @@ public class PrototypeTester : PatternTester
         var clonedCircleByConstructor = new Circle(circle) { X = -10, Y = 0 };
 
         Logger.LogLine(
-            new ConsoleTable("Variable Name", "Result")
+            new ConsoleTable("Expression", "Result")
                 .AddRow("rectangle", rectangle)
                 .AddRow("circle", circle)
                 .AddRow("clonedRectangle", clonedRectangle)

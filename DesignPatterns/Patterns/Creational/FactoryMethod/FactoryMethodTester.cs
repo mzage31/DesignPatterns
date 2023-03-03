@@ -26,7 +26,7 @@ public class FactoryMethodTester : PatternTester
 
 
         Logger.LogLine(
-            new ConsoleTable("Variable Name", "Result")
+            new ConsoleTable("Expression", "Result")
                 .AddRow("randomButton", randomButton)
                 .AddRow("windowsButton", windowsButton)
                 .AddRow("androidButton", androidButton)

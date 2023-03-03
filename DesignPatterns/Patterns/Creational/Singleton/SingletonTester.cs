@@ -16,7 +16,7 @@ public class SingletonTester : PatternTester
         var propertyInstance = Database.Instance.Query();
         
         Logger.LogLine(
-            new ConsoleTable("Variable Name" ,"Result")
+            new ConsoleTable("Expression" ,"Result")
                 .AddRow("methodInstance", methodInstance)
                 .AddRow("propertyInstance", propertyInstance)
                 .ToMarkDownString()

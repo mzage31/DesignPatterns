@@ -24,7 +24,6 @@
       <Folder Include="Patterns\Behavioral\Strategy" />
       <Folder Include="Patterns\Behavioral\TemplateMethod" />
       <Folder Include="Patterns\Behavioral\Visitor" />
-      <Folder Include="Patterns\Structural\Proxy" />
     </ItemGroup>
 
 </Project>

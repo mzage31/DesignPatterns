@@ -22,7 +22,7 @@ public class AbstractFactoryTester : PatternTester
         var macCheckBox = macUiFactory.CreateCheckBox(false);
 
         Logger.LogLine(
-            new ConsoleTable("Variable Name", "Result")
+            new ConsoleTable("Expression", "Result")
                 .AddRow("windowsButton", windowsButton)
                 .AddRow("windowsCheckBox", windowsCheckBox)
                 .AddRow("macButton", macButton)

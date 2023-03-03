@@ -1,4 +1,5 @@
-﻿using DesignPatterns.Logger;
+﻿using ConsoleTables;
+using DesignPatterns.Logger;
 
 namespace DesignPatterns.Patterns.Structural.Facade;
 
@@ -14,6 +15,10 @@ public class FacadeTester : PatternTester
     {
         var converter = new VideoConverterFacade();
         var result = converter.Convert("cats1.mp4", "cats2.webm");
-        Logger.LogLine(result);
+        Logger.LogLine(
+            new ConsoleTable("Expression", "Result")
+                .AddRow("VideoConverterFacade.Convert()", result)
+                .ToMarkDownString()
+        );
     }
 }

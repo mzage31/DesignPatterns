@@ -11,6 +11,7 @@ using DesignPatterns.Patterns.Structural.Composite;
 using DesignPatterns.Patterns.Structural.Decorator;
 using DesignPatterns.Patterns.Structural.Facade;
 using DesignPatterns.Patterns.Structural.Flyweight;
+using DesignPatterns.Patterns.Structural.Proxy;
 using Microsoft.Extensions.DependencyInjection;
 
 var fileLoggerPath = Directory.GetCurrentDirectory() + "/design-pattern-tests.log";
@@ -33,6 +34,7 @@ collection.AddTransient<CompositeTester>();
 collection.AddTransient<DecoratorTester>();
 collection.AddTransient<FlyWeightTester>();
 collection.AddTransient<FacadeTester>();
+collection.AddTransient<ProxyTester>();
 
 collection.AddTransient<Tester>();
 var provider = collection.BuildServiceProvider();

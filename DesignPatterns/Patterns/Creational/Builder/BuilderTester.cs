@@ -35,7 +35,7 @@ public class BuilderTester : PatternTester
         var directedPizzaDescriptor = pizzaDescriptorDirector.MakeChickenPizza();
 
         Logger.LogLine(
-            new ConsoleTable("Variable Name", "Result")
+            new ConsoleTable("Expression", "Result")
                 .AddRow("builtPepperoniPizza", builtPepperoniPizza)
                 .AddRow("builtChickenPizza", builtChickenPizza)
                 .AddRow("builtPizzaDescriptor", builtPizzaDescriptor)

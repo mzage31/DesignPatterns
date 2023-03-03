@@ -24,7 +24,6 @@
       <Folder Include="Patterns\Behavioral\Strategy" />
       <Folder Include="Patterns\Behavioral\TemplateMethod" />
       <Folder Include="Patterns\Behavioral\Visitor" />
-      <Folder Include="Patterns\Structural\Composite" />
       <Folder Include="Patterns\Structural\Decorator" />
       <Folder Include="Patterns\Structural\Facade" />
       <Folder Include="Patterns\Structural\Flyweight" />

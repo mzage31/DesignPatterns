@@ -7,6 +7,7 @@ using DesignPatterns.Patterns.Creational.Prototype;
 using DesignPatterns.Patterns.Creational.Singleton;
 using DesignPatterns.Patterns.Structural.Adapter;
 using DesignPatterns.Patterns.Structural.Bridge;
+using DesignPatterns.Patterns.Structural.Composite;
 using Microsoft.Extensions.DependencyInjection;
 
 var fileLoggerPath = Directory.GetCurrentDirectory() + "/design-pattern-tests.log";
@@ -25,6 +26,7 @@ collection.AddTransient<PrototypeTester>();
 // structural patterns
 collection.AddTransient<AdapterTester>();
 collection.AddTransient<BridgeTester>();
+collection.AddTransient<CompositeTester>();
 
 collection.AddTransient<Tester>();
 var provider = collection.BuildServiceProvider();

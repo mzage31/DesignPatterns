@@ -6,6 +6,7 @@ using DesignPatterns.Patterns.Creational.Prototype;
 using DesignPatterns.Patterns.Creational.Singleton;
 using DesignPatterns.Patterns.Structural.Adapter;
 using DesignPatterns.Patterns.Structural.Bridge;
+using DesignPatterns.Patterns.Structural.Composite;
 
 namespace DesignPatterns;
 
@@ -19,6 +20,7 @@ public class Tester
     private readonly PrototypeTester _prototypeTester;
     private readonly AdapterTester _adapterTester;
     private readonly BridgeTester _bridgeTester;
+    private readonly CompositeTester _compositeTester;
 
     public Tester(ILogger logger,
         BuilderTester builderTester,
@@ -27,7 +29,8 @@ public class Tester
         SingletonTester singletonTester,
         PrototypeTester prototypeTester,
         AdapterTester adapterTester,
-        BridgeTester bridgeTester
+        BridgeTester bridgeTester,
+        CompositeTester compositeTester
     )
     {
         _logger = logger;
@@ -42,6 +45,7 @@ public class Tester
         // structural patterns
         _adapterTester = adapterTester;
         _bridgeTester = bridgeTester;
+        _compositeTester = compositeTester;
     }
 
     public void Test()
@@ -56,6 +60,7 @@ public class Tester
         // structural patterns
         _adapterTester.Test();
         _bridgeTester.Test();
+        _compositeTester.Test();
 
         _logger.Display();
     }

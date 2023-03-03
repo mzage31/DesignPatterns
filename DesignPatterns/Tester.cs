@@ -8,6 +8,7 @@ using DesignPatterns.Patterns.Structural.Adapter;
 using DesignPatterns.Patterns.Structural.Bridge;
 using DesignPatterns.Patterns.Structural.Composite;
 using DesignPatterns.Patterns.Structural.Decorator;
+using DesignPatterns.Patterns.Structural.Facade;
 using DesignPatterns.Patterns.Structural.Flyweight;
 
 namespace DesignPatterns;
@@ -25,6 +26,7 @@ public class Tester
     private readonly CompositeTester _compositeTester;
     private readonly DecoratorTester _decoratorTester;
     private readonly FlyWeightTester _flyWeightTester;
+    private readonly FacadeTester _facadeTester;
 
     public Tester(ILogger logger,
         BuilderTester builderTester,
@@ -36,7 +38,8 @@ public class Tester
         BridgeTester bridgeTester,
         CompositeTester compositeTester,
         DecoratorTester decoratorTester,
-        FlyWeightTester flyWeightTester
+        FlyWeightTester flyWeightTester,
+        FacadeTester facadeTester
     )
     {
         _logger = logger;
@@ -54,6 +57,7 @@ public class Tester
         _compositeTester = compositeTester;
         _decoratorTester = decoratorTester;
         _flyWeightTester = flyWeightTester;
+        _facadeTester = facadeTester;
     }
 
     public void Test()
@@ -71,6 +75,7 @@ public class Tester
         _compositeTester.Test();
         _decoratorTester.Test();
         _flyWeightTester.Test();
+        _facadeTester.Test();
 
         _logger.Display();
     }

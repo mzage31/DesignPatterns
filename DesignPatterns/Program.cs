@@ -9,6 +9,7 @@ using DesignPatterns.Patterns.Structural.Adapter;
 using DesignPatterns.Patterns.Structural.Bridge;
 using DesignPatterns.Patterns.Structural.Composite;
 using DesignPatterns.Patterns.Structural.Decorator;
+using DesignPatterns.Patterns.Structural.Facade;
 using DesignPatterns.Patterns.Structural.Flyweight;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -31,6 +32,7 @@ collection.AddTransient<BridgeTester>();
 collection.AddTransient<CompositeTester>();
 collection.AddTransient<DecoratorTester>();
 collection.AddTransient<FlyWeightTester>();
+collection.AddTransient<FacadeTester>();
 
 collection.AddTransient<Tester>();
 var provider = collection.BuildServiceProvider();

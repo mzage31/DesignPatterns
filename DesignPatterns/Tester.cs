@@ -5,6 +5,7 @@ using DesignPatterns.Patterns.Creational.FactoryMethod;
 using DesignPatterns.Patterns.Creational.Prototype;
 using DesignPatterns.Patterns.Creational.Singleton;
 using DesignPatterns.Patterns.Structural.Adapter;
+using DesignPatterns.Patterns.Structural.Bridge;
 
 namespace DesignPatterns;
 
@@ -17,15 +18,16 @@ public class Tester
     private readonly SingletonTester _singletonTester;
     private readonly PrototypeTester _prototypeTester;
     private readonly AdapterTester _adapterTester;
+    private readonly BridgeTester _bridgeTester;
 
-    public Tester(
-        ILogger logger,
+    public Tester(ILogger logger,
         BuilderTester builderTester,
         FactoryMethodTester factoryMethodTester,
         AbstractFactoryTester abstractFactoryTester,
         SingletonTester singletonTester,
         PrototypeTester prototypeTester,
-        AdapterTester adapterTester
+        AdapterTester adapterTester,
+        BridgeTester bridgeTester
     )
     {
         _logger = logger;
@@ -36,9 +38,10 @@ public class Tester
         _abstractFactoryTester = abstractFactoryTester;
         _singletonTester = singletonTester;
         _prototypeTester = prototypeTester;
-        
+
         // structural patterns
         _adapterTester = adapterTester;
+        _bridgeTester = bridgeTester;
     }
 
     public void Test()
@@ -49,9 +52,10 @@ public class Tester
         _abstractFactoryTester.Test();
         _singletonTester.Test();
         _prototypeTester.Test();
-        
+
         // structural patterns
         _adapterTester.Test();
+        _builderTester.Test();
 
         _logger.Display();
     }

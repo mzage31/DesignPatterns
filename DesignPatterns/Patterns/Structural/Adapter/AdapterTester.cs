@@ -17,7 +17,7 @@ public class AdapterTester : PatternTester
         var turkey = new Turkey();
         var turkeyBeingADuck = new TurkeyDuckAdapter(turkey);
         
-        Logger.Log(
+        Logger.LogLine(
             new ConsoleTable("Expression", "Result")
                 .AddRow("duck.Quack()", duck.Quack())
                 .AddRow("duck.Fly()", duck.Fly())

@@ -1,4 +1,5 @@
 ﻿using DesignPatterns.Logger;
+using DesignPatterns.Patterns.Behavioral.Command;
 using DesignPatterns.Patterns.Creational.AbstractFactory;
 using DesignPatterns.Patterns.Creational.Builder;
 using DesignPatterns.Patterns.Creational.FactoryMethod;
@@ -29,6 +30,7 @@ public class Tester
     private readonly FlyWeightTester _flyWeightTester;
     private readonly FacadeTester _facadeTester;
     private readonly ProxyTester _proxyTester;
+    private readonly CommandTester _commandTester;
 
     public Tester(ILogger logger,
         BuilderTester builderTester,
@@ -42,7 +44,8 @@ public class Tester
         DecoratorTester decoratorTester,
         FlyWeightTester flyWeightTester,
         FacadeTester facadeTester,
-        ProxyTester proxyTester
+        ProxyTester proxyTester,
+        CommandTester commandTester
     )
     {
         _logger = logger;
@@ -62,6 +65,9 @@ public class Tester
         _flyWeightTester = flyWeightTester;
         _facadeTester = facadeTester;
         _proxyTester = proxyTester;
+        
+        // behavioral patterns
+        _commandTester = commandTester;
     }
 
     public void Test()
@@ -81,7 +87,10 @@ public class Tester
         _flyWeightTester.Test();
         _facadeTester.Test();
         _proxyTester.Test();
-
+        
+        // behavioral patterns
+        _commandTester.Test();
+        
         _logger.Display();
     }
 }

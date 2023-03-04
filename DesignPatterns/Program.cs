@@ -1,5 +1,6 @@
 ﻿using DesignPatterns;
 using DesignPatterns.Logger;
+using DesignPatterns.Patterns.Behavioral.Command;
 using DesignPatterns.Patterns.Creational.AbstractFactory;
 using DesignPatterns.Patterns.Creational.Builder;
 using DesignPatterns.Patterns.Creational.FactoryMethod;
@@ -35,6 +36,9 @@ collection.AddTransient<DecoratorTester>();
 collection.AddTransient<FlyWeightTester>();
 collection.AddTransient<FacadeTester>();
 collection.AddTransient<ProxyTester>();
+
+// behavioral patterns
+collection.AddTransient<CommandTester>();
 
 collection.AddTransient<Tester>();
 var provider = collection.BuildServiceProvider();

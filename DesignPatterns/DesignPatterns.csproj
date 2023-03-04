@@ -15,7 +15,6 @@
 
     <ItemGroup>
       <Folder Include="Patterns\Behavioral\ChainOfResponsibility" />
-      <Folder Include="Patterns\Behavioral\Command" />
       <Folder Include="Patterns\Behavioral\Iterator" />
       <Folder Include="Patterns\Behavioral\Mediator" />
       <Folder Include="Patterns\Behavioral\Memento" />
